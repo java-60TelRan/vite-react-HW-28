@@ -4,12 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [time, setCount] = useState(new Date().toLocaleTimeString())
-  function tic () {
-    setCount(new Date().toLocaleTimeString());
-    console.log("tic function")
+  const [time, setTime] = useState(new Date().toLocaleTimeString())
+  useEffect(() => {
+    console.log("use efecte called")
+    function tic () {
+    setTime(new Date().toLocaleTimeString());
+    console.log("tic function");
   }
-  setInterval(tic, 1000)
+  setInterval(tic, 1000);
+
+  },[])
+  
+ 
   return (
     <>
       <div>
